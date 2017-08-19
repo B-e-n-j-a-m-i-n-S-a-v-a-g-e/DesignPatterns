@@ -90,4 +90,4 @@ var LightningSpell = (function () {
     };
     return LightningSpell;
 })();
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=content.js.map
