@@ -14,4 +14,20 @@
     console.log(yellowWizard.castSpell());
 
 
+    //FACTORY PATTERN IMPLEMENTATION
+
+    console.log("<<<FACTORY PATTERN IMPLEMENTATION>>>");
+
+    let heroFactory = new HeroFactory();
+
+    let factory = heroFactory.getHero("Fighter");
+    console.log(factory.spawnHero());
+
+    factory = heroFactory.getHero("Mage");
+    console.log(factory.spawnHero());
+
+    factory = heroFactory.getHero("Thief");
+    console.log(factory.spawnHero());
+
+
 };

@@ -7,50 +7,59 @@ window.onload = function () {
     console.log(redWizard.castSpell());
     var yellowWizard = new Wizard("Yellow Wizard", new FireSpell());
     console.log(yellowWizard.castSpell());
+    //FACTORY PATTERN IMPLEMENTATION
+    console.log("<<<FACTORY PATTERN IMPLEMENTATION>>>");
+    var heroFactory = new HeroFactory();
+    var factory = heroFactory.getHero("Fighter");
+    console.log(factory.spawnHero());
+    factory = heroFactory.getHero("Mage");
+    console.log(factory.spawnHero());
+    factory = heroFactory.getHero("Thief");
+    console.log(factory.spawnHero());
 };
-var Circle = (function () {
-    function Circle() {
+var Fighter = (function () {
+    function Fighter() {
     }
-    Circle.prototype.draw = function () {
-        return "A circle is drawn";
+    Fighter.prototype.spawnHero = function () {
+        return "A hero joins your party.";
     };
-    return Circle;
+    return Fighter;
 })();
-var Rectangle = (function () {
-    function Rectangle() {
+var Mage = (function () {
+    function Mage() {
     }
-    Rectangle.prototype.draw = function () {
-        return "A rectangle is drawn";
+    Mage.prototype.spawnHero = function () {
+        return "A mage joins your party.";
     };
-    return Rectangle;
+    return Mage;
 })();
-var ShapeFactory = (function () {
-    function ShapeFactory() {
+var HeroFactory = (function () {
+    function HeroFactory() {
     }
-    ShapeFactory.prototype.getShape = function (shapeType) {
-        switch (shapeType) {
-            case "Circle":
-                return new Circle();
+    HeroFactory.prototype.getHero = function (heroType) {
+        switch (heroType) {
+            case "Fighter":
+                return new Fighter();
                 break;
-            case "Square":
-                return new Square();
+            case "Mage":
+                return new Mage();
                 break;
-            case "Rectangle":
-                return new Rectangle();
+            case "Thief":
+                return new Thief();
                 break;
             default:
                 return null;
         }
     };
-    return ShapeFactory;
+    return HeroFactory;
 })();
-var Square = (function () {
-    function Square() {
+var Thief = (function () {
+    function Thief() {
     }
-    Square.prototype.draw = function () {
-        return "A square is drawn.";
+    Thief.prototype.spawnHero = function () {
+        return "A thief joins your party.";
     };
-    return Square;
+    return Thief;
 })();
 var Wizard = (function () {
     function Wizard(name, strategy) {

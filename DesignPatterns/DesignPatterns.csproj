@@ -28,11 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="Factory\Circle.ts" />
-    <TypeScriptCompile Include="Factory\IShape.ts" />
-    <TypeScriptCompile Include="Factory\Rectangle.ts" />
-    <TypeScriptCompile Include="Factory\ShapeFactory.ts" />
-    <TypeScriptCompile Include="Factory\Square.ts" />
+    <TypeScriptCompile Include="Factory\Fighter.ts" />
+    <TypeScriptCompile Include="Factory\IHero.ts" />
+    <TypeScriptCompile Include="Factory\Mage.ts" />
+    <TypeScriptCompile Include="Factory\HeroFactory.ts" />
+    <TypeScriptCompile Include="Factory\Thief.ts" />
     <TypeScriptCompile Include="Strategy\Wizard.ts" />
     <TypeScriptCompile Include="Strategy\FreezeSpell.ts" />
     <TypeScriptCompile Include="Strategy\FireSpell.ts" />
