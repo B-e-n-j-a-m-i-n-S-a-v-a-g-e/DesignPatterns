@@ -16,6 +16,21 @@ window.onload = function () {
     console.log(factory.spawnHero());
     factory = heroFactory.getHero("Thief");
     console.log(factory.spawnHero());
+    //MEMENTO PATTERN IMPLEMENTATION
+    console.log("<<<MEMENTO PATTERN IMPLEMENTATION>>>");
+    var originator = new Sorcerer();
+    var caretaker = new Caretaker();
+    originator.setState("Casting lightning spell");
+    originator.setState("Casting water spell");
+    caretaker.addSpell(originator.saveStateToMemento());
+    originator.setState("Casting lava spell");
+    caretaker.addSpell(originator.saveStateToMemento());
+    originator.setState("Casting popcorn spell");
+    console.log("Current state: " + originator.getState());
+    originator.getStateFromMemento(caretaker.retrieveSpell(0));
+    console.log("First saved state: " + originator.getState());
+    originator.getStateFromMemento(caretaker.retrieveSpell(1));
+    console.log("Second saved state: " + originator.getState());
 };
 var Fighter = (function () {
     function Fighter() {
@@ -60,6 +75,44 @@ var Thief = (function () {
         return "A thief joins your party.";
     };
     return Thief;
+})();
+var Caretaker = (function () {
+    function Caretaker() {
+        this.spellList = [];
+    }
+    Caretaker.prototype.addSpell = function (spell) {
+        this.spellList.push(spell);
+    };
+    Caretaker.prototype.retrieveSpell = function (index) {
+        return this.spellList[index];
+    };
+    return Caretaker;
+})();
+var Memento = (function () {
+    function Memento(state) {
+        this.state = state;
+    }
+    Memento.prototype.getState = function () {
+        return this.state;
+    };
+    return Memento;
+})();
+var Sorcerer = (function () {
+    function Sorcerer() {
+    }
+    Sorcerer.prototype.getState = function () {
+        return this.state;
+    };
+    Sorcerer.prototype.setState = function (newState) {
+        this.state = newState;
+    };
+    Sorcerer.prototype.saveStateToMemento = function () {
+        return new Memento(this.state);
+    };
+    Sorcerer.prototype.getStateFromMemento = function (memento) {
+        this.state = memento.getState();
+    };
+    return Sorcerer;
 })();
 var Wizard = (function () {
     function Wizard(name, strategy) {

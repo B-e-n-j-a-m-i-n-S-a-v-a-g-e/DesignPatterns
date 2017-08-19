@@ -30,4 +30,28 @@
     console.log(factory.spawnHero());
 
 
+    //MEMENTO PATTERN IMPLEMENTATION
+
+    console.log("<<<MEMENTO PATTERN IMPLEMENTATION>>>");
+
+    let originator = new Sorcerer();
+    let caretaker = new Caretaker();
+
+    originator.setState("Casting lightning spell");
+    originator.setState("Casting water spell");
+    caretaker.addSpell(originator.saveStateToMemento());
+
+    originator.setState("Casting lava spell");
+    caretaker.addSpell(originator.saveStateToMemento());
+
+    originator.setState("Casting popcorn spell");
+    console.log("Current state: " + originator.getState());
+
+    originator.getStateFromMemento(caretaker.retrieveSpell(0));
+    console.log("First saved state: " + originator.getState());
+
+    originator.getStateFromMemento(caretaker.retrieveSpell(1));
+    console.log("Second saved state: " + originator.getState());
+
+
 };

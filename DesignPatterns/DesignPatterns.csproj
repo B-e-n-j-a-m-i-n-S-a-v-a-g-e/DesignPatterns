@@ -33,7 +33,10 @@
     <TypeScriptCompile Include="Factory\Mage.ts" />
     <TypeScriptCompile Include="Factory\HeroFactory.ts" />
     <TypeScriptCompile Include="Factory\Thief.ts" />
-    <TypeScriptCompile Include="Strategy\Wizard.ts" />
+    <TypeScriptCompile Include="Memento\Caretaker.ts" />
+    <TypeScriptCompile Include="Memento\Memento.ts" />
+    <TypeScriptCompile Include="Memento\Sorcerer.ts" />
+    <TypeScriptCompile Include="Strategy\Sorcerer.ts" />
     <TypeScriptCompile Include="Strategy\FreezeSpell.ts" />
     <TypeScriptCompile Include="Strategy\FireSpell.ts" />
     <TypeScriptCompile Include="Strategy\LightningSpell.ts" />
