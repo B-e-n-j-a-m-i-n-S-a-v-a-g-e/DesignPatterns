@@ -1,0 +1,5 @@
+c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll.config
+c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll
+c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.pdb
+c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.dll
+c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.pdb

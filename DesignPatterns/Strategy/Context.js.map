@@ -1,0 +1,1 @@
+{"version":3,"file":"Context.js","sourceRoot":"","sources":["Context.ts"],"names":["Wizard","Wizard.constructor","Wizard.castSpell"],"mappings":"AAAA;IAIIA,gBAAYA,QAAmBA;QAC3BC,IAAIA,CAACA,QAAQA,GAAGA,QAAQA,CAACA;IAC7BA,CAACA;IAEDD,0BAASA,GAATA;QACIE,MAAMA,CAACA,IAAIA,CAACA,QAAQA,CAACA,SAASA,EAAEA,CAACA;IACrCA,CAACA;IAELF,aAACA;AAADA,CAACA,AAZD,IAYC"}

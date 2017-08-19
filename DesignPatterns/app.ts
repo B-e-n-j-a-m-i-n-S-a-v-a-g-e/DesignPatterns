@@ -1,28 +1,17 @@
-﻿class Greeter {
-    element: HTMLElement;
-    span: HTMLElement;
-    timerToken: number;
+﻿window.onload = () => {
 
-    constructor(element: HTMLElement) {
-        this.element = element;
-        this.element.innerHTML += "The time is: ";
-        this.span = document.createElement('span');
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toUTCString();
-    }
+    //STRATEGY PATTERN IMPLEMENTATION
 
-    start() {
-        this.timerToken = setInterval(() => this.span.innerHTML = new Date().toUTCString(), 500);
-    }
+    console.log("<<<STRATEGY PATTERN IMPLEMENTATION>>>");
 
-    stop() {
-        clearTimeout(this.timerToken);
-    }
+    let blueWizard = new Wizard("Blue Wizard", new FreezeSpell());
+    console.log(blueWizard.castSpell());
 
-}
+    let redWizard = new Wizard("Red Wizard", new LightningSpell());
+    console.log(redWizard.castSpell());
 
-window.onload = () => {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
+    let yellowWizard = new Wizard("Yellow Wizard", new FireSpell());
+    console.log(yellowWizard.castSpell());
+
+
 };

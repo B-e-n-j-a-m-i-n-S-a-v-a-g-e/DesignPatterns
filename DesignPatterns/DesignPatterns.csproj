@@ -28,6 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Strategy\Wizard.ts" />
+    <TypeScriptCompile Include="Strategy\FreezeSpell.ts" />
+    <TypeScriptCompile Include="Strategy\FireSpell.ts" />
+    <TypeScriptCompile Include="Strategy\LightningSpell.ts" />
+    <TypeScriptCompile Include="Strategy\IStrategy.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
