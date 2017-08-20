@@ -41,6 +41,10 @@
     <TypeScriptCompile Include="Memento\Caretaker.ts" />
     <TypeScriptCompile Include="Memento\Memento.ts" />
     <TypeScriptCompile Include="Memento\Sorcerer.ts" />
+    <TypeScriptCompile Include="State\DragonContext.ts" />
+    <TypeScriptCompile Include="State\IDragonState.ts" />
+    <TypeScriptCompile Include="State\DragonAttackState.ts" />
+    <TypeScriptCompile Include="State\DragonDefendState.ts" />
     <TypeScriptCompile Include="Strategy\Sorcerer.ts" />
     <TypeScriptCompile Include="Strategy\FreezeSpell.ts" />
     <TypeScriptCompile Include="Strategy\FireSpell.ts" />

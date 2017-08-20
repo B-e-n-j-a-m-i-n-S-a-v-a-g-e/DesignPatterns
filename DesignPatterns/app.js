@@ -37,6 +37,15 @@ window.onload = function () {
     orcArmyMaker.addOrcArcher();
     orcArmyMaker.addOrcCommander();
     orcArmyMaker.addOrcBerserker();
+    //STATE PATTERN IMPLEMENTATION
+    console.log("<<<STATE PATTERN IMPLEMENTATION>>>");
+    var context = new DragonContext();
+    var attackState = new DragonAttackState();
+    attackState.setState(context);
+    console.log(context.getState().toString());
+    var defendState = new DragonDefendState();
+    defendState.setState(context);
+    console.log(context.getState().toString());
 };
 var OrcCommander = (function () {
     function OrcCommander() {
@@ -160,6 +169,42 @@ var Sorcerer = (function () {
         this.state = memento.getState();
     };
     return Sorcerer;
+})();
+var DragonContext = (function () {
+    function DragonContext() {
+        this.state = null;
+    }
+    DragonContext.prototype.setState = function (state) {
+        this.state = state;
+    };
+    DragonContext.prototype.getState = function () {
+        return this.state;
+    };
+    return DragonContext;
+})();
+var DragonAttackState = (function () {
+    function DragonAttackState() {
+    }
+    DragonAttackState.prototype.setState = function (context) {
+        console.log("Dragon is in attack state");
+        context.setState(this);
+    };
+    DragonAttackState.prototype.toString = function () {
+        return "Dragon Attack.";
+    };
+    return DragonAttackState;
+})();
+var DragonDefendState = (function () {
+    function DragonDefendState() {
+    }
+    DragonDefendState.prototype.setState = function (context) {
+        console.log("Dragon is in defensive mode.");
+        context.setState(this);
+    };
+    DragonDefendState.prototype.toString = function () {
+        return "Dragon Defend.";
+    };
+    return DragonDefendState;
 })();
 var Wizard = (function () {
     function Wizard(name, strategy) {

@@ -64,4 +64,21 @@
     orcArmyMaker.addOrcCommander();
     orcArmyMaker.addOrcBerserker();
 
+    //STATE PATTERN IMPLEMENTATION
+
+    console.log("<<<STATE PATTERN IMPLEMENTATION>>>");
+
+    let context = new DragonContext();
+
+    let attackState: DragonAttackState = new DragonAttackState();
+    attackState.setState(context);
+
+    console.log(context.getState().toString());
+
+    let defendState: DragonDefendState = new DragonDefendState();
+    defendState.setState(context);
+
+    console.log(context.getState().toString());
+
+
 };
