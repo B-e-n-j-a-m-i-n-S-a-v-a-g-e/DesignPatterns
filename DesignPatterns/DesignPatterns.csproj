@@ -28,6 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Facade\OrcCommander.ts" />
+    <TypeScriptCompile Include="Facade\IOrcFighter.ts" />
+    <TypeScriptCompile Include="Facade\OrcArcher.ts" />
+    <TypeScriptCompile Include="Facade\OrcArmyMaker.ts" />
+    <TypeScriptCompile Include="Facade\OrcBerserker.ts" />
     <TypeScriptCompile Include="Factory\Fighter.ts" />
     <TypeScriptCompile Include="Factory\IHero.ts" />
     <TypeScriptCompile Include="Factory\Mage.ts" />

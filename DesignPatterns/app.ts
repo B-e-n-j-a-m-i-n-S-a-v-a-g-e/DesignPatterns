@@ -54,4 +54,14 @@
     console.log("Second saved state: " + originator.getState());
 
 
+    //FACADE PATTERN IMPLEMENTATION
+
+    console.log("<<<FACADE PATTERN IMPLEMENTATION>>>");
+
+    let orcArmyMaker = new OrcArmyMaker();
+
+    orcArmyMaker.addOrcArcher();
+    orcArmyMaker.addOrcCommander();
+    orcArmyMaker.addOrcBerserker();
+
 };

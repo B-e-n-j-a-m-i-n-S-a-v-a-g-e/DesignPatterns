@@ -1,0 +1,3 @@
+﻿interface IOrcFighter {
+    addToOrcArmy();        
+}

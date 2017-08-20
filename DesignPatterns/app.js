@@ -31,7 +31,54 @@ window.onload = function () {
     console.log("First saved state: " + originator.getState());
     originator.getStateFromMemento(caretaker.retrieveSpell(1));
     console.log("Second saved state: " + originator.getState());
+    //FACADE PATTERN IMPLEMENTATION
+    console.log("<<<FACADE PATTERN IMPLEMENTATION>>>");
+    var orcArmyMaker = new OrcArmyMaker();
+    orcArmyMaker.addOrcArcher();
+    orcArmyMaker.addOrcCommander();
+    orcArmyMaker.addOrcBerserker();
 };
+var OrcCommander = (function () {
+    function OrcCommander() {
+    }
+    OrcCommander.prototype.addToOrcArmy = function () {
+        console.log("An orc commander is added to the orc army.");
+    };
+    return OrcCommander;
+})();
+var OrcArcher = (function () {
+    function OrcArcher() {
+    }
+    OrcArcher.prototype.addToOrcArmy = function () {
+        console.log("An orc archer is added to the orc army.");
+    };
+    return OrcArcher;
+})();
+var OrcArmyMaker = (function () {
+    function OrcArmyMaker() {
+        this.orcArcher = new OrcArcher();
+        this.orcCommander = new OrcCommander();
+        this.orcBerserker = new OrcBerserker();
+    }
+    OrcArmyMaker.prototype.addOrcArcher = function () {
+        this.orcArcher.addToOrcArmy();
+    };
+    OrcArmyMaker.prototype.addOrcCommander = function () {
+        this.orcCommander.addToOrcArmy();
+    };
+    OrcArmyMaker.prototype.addOrcBerserker = function () {
+        this.orcBerserker.addToOrcArmy();
+    };
+    return OrcArmyMaker;
+})();
+var OrcBerserker = (function () {
+    function OrcBerserker() {
+    }
+    OrcBerserker.prototype.addToOrcArmy = function () {
+        console.log("An orc berserker is added to the orc army.");
+    };
+    return OrcBerserker;
+})();
 var Fighter = (function () {
     function Fighter() {
     }
