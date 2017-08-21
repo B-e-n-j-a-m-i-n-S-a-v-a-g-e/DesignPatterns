@@ -1,5 +1,5 @@
-c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll.config
-c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll
-c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.pdb
-c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.dll
-c:\users\benjamin\documents\visual studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.pdb
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll.config
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\DesignPatterns\DesignPatterns\bin\DesignPatterns.pdb
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\DesignPatterns\DesignPatterns\obj\Debug\DesignPatterns.pdb

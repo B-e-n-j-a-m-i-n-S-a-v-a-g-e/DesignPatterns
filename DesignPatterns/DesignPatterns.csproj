@@ -38,6 +38,11 @@
     <TypeScriptCompile Include="Factory\Mage.ts" />
     <TypeScriptCompile Include="Factory\HeroFactory.ts" />
     <TypeScriptCompile Include="Factory\Thief.ts" />
+    <TypeScriptCompile Include="Flyweight\Circle.ts" />
+    <TypeScriptCompile Include="Flyweight\IShape.ts" />
+    <TypeScriptCompile Include="Flyweight\ShapeFactory.ts" />
+    <TypeScriptCompile Include="Mediator\Output.ts" />
+    <TypeScriptCompile Include="Mediator\MindReader.ts" />
     <TypeScriptCompile Include="Memento\Caretaker.ts" />
     <TypeScriptCompile Include="Memento\Memento.ts" />
     <TypeScriptCompile Include="Memento\Sorcerer.ts" />

@@ -46,15 +46,31 @@ window.onload = function () {
     var defendState = new DragonDefendState();
     defendState.setState(context);
     console.log(context.getState().toString());
+    //MEDIATOR PATTERN IMPLEMENTATION
+    console.log("<<<MEDIATOR PATTERN IMPLEMENTATION>>>");
+    var mindReader1 = new MindReader("Zfftlllar");
+    var mindReader2 = new MindReader("Hanyrroptus");
+    mindReader1.sendMentalMessage("Why good day to you, Hanyrroptus!");
+    mindReader2.sendMentalMessage("Why hello to YOU, Zfftlllar!");
+    ////FYLWEIGHT PATTERN IMPLEMENTATION
+    //let colors: string[] = ["Red", "Green", "Blue", "White", "Black"];
+    //for (let i = 0; i < 20; i++) {
+    //    let circle = ShapeFactory.getCircle(this.getRandomColor());
+    //    circle.setX(this.getRandomX());
+    //    circle.setY(this.getRandomY());
+    //    circle.getRadius(100);
+    //    circle.draw();
+    //}
+    //function getRandomNumber() {
+    //    return colors[Math.random() * colors.length];
+    //}
+    //function getRandomX() {
+    //    return Math.random() * 100;
+    //}
+    //function getRandomY() {
+    //    return Math.random() * 100;
+    //}
 };
-var OrcCommander = (function () {
-    function OrcCommander() {
-    }
-    OrcCommander.prototype.addToOrcArmy = function () {
-        console.log("An orc commander is added to the orc army.");
-    };
-    return OrcCommander;
-})();
 var OrcArcher = (function () {
     function OrcArcher() {
     }
@@ -88,6 +104,14 @@ var OrcBerserker = (function () {
     };
     return OrcBerserker;
 })();
+var OrcCommander = (function () {
+    function OrcCommander() {
+    }
+    OrcCommander.prototype.addToOrcArmy = function () {
+        console.log("An orc commander is added to the orc army.");
+    };
+    return OrcCommander;
+})();
 var Fighter = (function () {
     function Fighter() {
     }
@@ -95,14 +119,6 @@ var Fighter = (function () {
         return "A hero joins your party.";
     };
     return Fighter;
-})();
-var Mage = (function () {
-    function Mage() {
-    }
-    Mage.prototype.spawnHero = function () {
-        return "A mage joins your party.";
-    };
-    return Mage;
 })();
 var HeroFactory = (function () {
     function HeroFactory() {
@@ -124,6 +140,14 @@ var HeroFactory = (function () {
     };
     return HeroFactory;
 })();
+var Mage = (function () {
+    function Mage() {
+    }
+    Mage.prototype.spawnHero = function () {
+        return "A mage joins your party.";
+    };
+    return Mage;
+})();
 var Thief = (function () {
     function Thief() {
     }
@@ -131,6 +155,66 @@ var Thief = (function () {
         return "A thief joins your party.";
     };
     return Thief;
+})();
+//class Circle implements IShape {
+//    private color: string;
+//    private x: number;
+//    private y: number;
+//    private radius: number;
+//    constructor(color: string) {
+//        this.color = color;
+//    }
+//    setX(x: number) {
+//        this.x = x;
+//    }
+//    setY(y: number) {
+//        this.y = y;
+//    }
+//    setRadius(radius: number) {
+//        this.radius = radius;
+//    }
+//    draw() {
+//        console.log("Circle.draw()" + this.color + " " + this.x + " " + this.y + " " + this.radius);
+//    }
+//} 
+//interface IShape {
+//    draw();
+//}    
+//class ShapeFactory {
+//    private circleMap = {};
+//    static getCircle(color: string) {
+//        let circle = this.circleMap;
+//        if (circle == null) {
+//            circle = new Circle(color);
+//            this.circleMap.color = circle;
+//            //Add circle to circle map;
+//            console.log("Creating circle of color: " + color);
+//        }
+//        return circle;
+//    }
+//} 
+var MindReader = (function () {
+    function MindReader(name) {
+        this.name = name;
+    }
+    MindReader.prototype.getName = function () {
+        return this.name;
+    };
+    MindReader.prototype.setName = function (name) {
+        this.name = name;
+    };
+    MindReader.prototype.sendMentalMessage = function (message) {
+        Output.outputMentalMessage(this, message);
+    };
+    return MindReader;
+})();
+var Output = (function () {
+    function Output() {
+    }
+    Output.outputMentalMessage = function (mindReader, messageContent) {
+        console.log(" [" + mindReader.getName() + "] : " + messageContent);
+    };
+    return Output;
 })();
 var Caretaker = (function () {
     function Caretaker() {
@@ -170,18 +254,6 @@ var Sorcerer = (function () {
     };
     return Sorcerer;
 })();
-var DragonContext = (function () {
-    function DragonContext() {
-        this.state = null;
-    }
-    DragonContext.prototype.setState = function (state) {
-        this.state = state;
-    };
-    DragonContext.prototype.getState = function () {
-        return this.state;
-    };
-    return DragonContext;
-})();
 var DragonAttackState = (function () {
     function DragonAttackState() {
     }
@@ -194,6 +266,18 @@ var DragonAttackState = (function () {
     };
     return DragonAttackState;
 })();
+var DragonContext = (function () {
+    function DragonContext() {
+        this.state = null;
+    }
+    DragonContext.prototype.setState = function (state) {
+        this.state = state;
+    };
+    DragonContext.prototype.getState = function () {
+        return this.state;
+    };
+    return DragonContext;
+})();
 var DragonDefendState = (function () {
     function DragonDefendState() {
     }
@@ -205,6 +289,30 @@ var DragonDefendState = (function () {
         return "Dragon Defend.";
     };
     return DragonDefendState;
+})();
+var FireSpell = (function () {
+    function FireSpell() {
+    }
+    FireSpell.prototype.castSpell = function () {
+        return "All enemies are engulfed in flames.";
+    };
+    return FireSpell;
+})();
+var FreezeSpell = (function () {
+    function FreezeSpell() {
+    }
+    FreezeSpell.prototype.castSpell = function () {
+        return "The freeze spell crystalizes all enemies in a thick shell of ice.";
+    };
+    return FreezeSpell;
+})();
+var LightningSpell = (function () {
+    function LightningSpell() {
+    }
+    LightningSpell.prototype.castSpell = function () {
+        return "Lightning strikes down from the sky and vaporizes all enemies.";
+    };
+    return LightningSpell;
 })();
 var Wizard = (function () {
     function Wizard(name, strategy) {
@@ -219,29 +327,5 @@ var Wizard = (function () {
         return this.strategy.castSpell();
     };
     return Wizard;
-})();
-var FreezeSpell = (function () {
-    function FreezeSpell() {
-    }
-    FreezeSpell.prototype.castSpell = function () {
-        return "The freeze spell crystalizes all enemies in a thick shell of ice.";
-    };
-    return FreezeSpell;
-})();
-var FireSpell = (function () {
-    function FireSpell() {
-    }
-    FireSpell.prototype.castSpell = function () {
-        return "All enemies are engulfed in flames.";
-    };
-    return FireSpell;
-})();
-var LightningSpell = (function () {
-    function LightningSpell() {
-    }
-    LightningSpell.prototype.castSpell = function () {
-        return "Lightning strikes down from the sky and vaporizes all enemies.";
-    };
-    return LightningSpell;
 })();
 //# sourceMappingURL=app.js.map

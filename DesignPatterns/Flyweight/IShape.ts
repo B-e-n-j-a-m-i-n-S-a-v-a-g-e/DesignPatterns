@@ -1,0 +1,3 @@
+﻿//interface IShape {
+//    draw();
+//}   
