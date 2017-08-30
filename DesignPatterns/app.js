@@ -1,3 +1,4 @@
+var _this = this;
 window.onload = function () {
     //STRATEGY PATTERN IMPLEMENTATION
     console.log("<<<STRATEGY PATTERN IMPLEMENTATION>>>");
@@ -52,25 +53,144 @@ window.onload = function () {
     var mindReader2 = new MindReader("Hanyrroptus");
     mindReader1.sendMentalMessage("Why good day to you, Hanyrroptus!");
     mindReader2.sendMentalMessage("Why hello to YOU, Zfftlllar!");
+    /*
+    //BUILDER PATTERN IMPLEMENTATION
+
+    console.log("<<<BUILDER PATTERN IMPLEMENTATION>>>");
+
+    let mealBuilder = new MealBuilder();
+
+    let vegMeal = mealBuilder.prepareVegMeal();
+    console.log("Veg meal");
+    vegMeal.showItems();
+    console.log("Total cost: " + vegMeal.getCost());
+
+    let nonVegMeal = mealBuilder.prepareNonVegMeal();
+    console.log("\n NonVeg Meal");
+    nonVegMeal.showItems();
+    console.log("Total cost: " + nonVegMeal.getCost());
+    */
     ////FYLWEIGHT PATTERN IMPLEMENTATION
-    //let colors: string[] = ["Red", "Green", "Blue", "White", "Black"];
-    //for (let i = 0; i < 20; i++) {
-    //    let circle = ShapeFactory.getCircle(this.getRandomColor());
-    //    circle.setX(this.getRandomX());
-    //    circle.setY(this.getRandomY());
-    //    circle.getRadius(100);
-    //    circle.draw();
-    //}
-    //function getRandomNumber() {
-    //    return colors[Math.random() * colors.length];
-    //}
-    //function getRandomX() {
-    //    return Math.random() * 100;
-    //}
-    //function getRandomY() {
-    //    return Math.random() * 100;
-    //}
+    var colors = ["Red", "Green", "Blue", "White", "Black"];
+    for (var i = 0; i < 20; i++) {
+        var circle = ShapeFactory.getCircle(_this.getRandomColor());
+    }
+    function getRandomNumber() {
+        return colors[Math.random() * colors.length];
+    }
+    function getRandomX() {
+        return Math.random() * 100;
+    }
+    function getRandomY() {
+        return Math.random() * 100;
+    }
 };
+//class Bottle implements IPacking {
+//    pack() {
+//        return "Bottle";
+//    }
+//} 
+//abstract class Burger implements IItem {
+//    packing() {
+//        return new Wrapper();
+//    }
+//    abstract price();
+//    abstract name();
+//} 
+//class ChickenBurger extends Burger {
+//    price() {
+//        return 50.5;
+//    }
+//    name() {
+//        return "Chicken Burger";
+//    }
+//} 
+//class Coke extends ColdDrink {
+//    price() {
+//        return 30.0;
+//    }
+//    name() {
+//        return "Coke";
+//    }
+//} 
+//abstract class ColdDrink implements IItem {
+//    packing() {
+//        return new Bottle();
+//    }
+//    abstract price();
+//    name() { }
+//} 
+//interface IItem {
+//    name();
+//    packing();
+//    price();
+//} 
+//interface IPacking {
+//    pack();
+//} 
+//class Meal {
+//    private items: IItem[] = [];
+//    addItem(item: IItem) {
+//        this.items.push(item);
+//    }
+//    getCost() {
+//        let cost = 0.0;
+//        for (let i = 0; i < this.items.length; i++) {
+//            cost += this.items[i].price();
+//        }
+//        return cost;
+//    }
+//    showItems() {
+//        for (let i = 0; i < this.items.length; i++) {
+//            console.log("Item: " + this.items[i].name);
+//            console.log(", Packing: " + this.items[i].packing().pack());
+//            console.log(", Price: " + this.items[i].price());
+//        }
+//    }
+//} 
+//class MealBuilder {
+//    prepareVegMeal() {
+//        let meal = new Meal();
+//        meal.addItem(new VegBurger());
+//        meal.addItem(new Coke());
+//        return meal;
+//    } 
+//    prepareNonVegMeal() {
+//        let meal = new Meal();
+//        meal.addItem(new ChickenBurger());
+//        meal.addItem(new Pepsi());
+//        return meal;
+//    }
+//} 
+//class Pepsi extends ColdDrink {
+//    price() {
+//        return 35.0;
+//    }
+//    name() {
+//        return "Pepsi";
+//    }
+//} 
+//class VegBurger extends Burger {
+//    price() {
+//        return 25.0;
+//    }
+//    name() {
+//        return "Veg Burger";
+//    }
+//} 
+//class Wrapper implements IPacking {
+//    pack() {
+//        return "Wrapper";
+//    }
+//} 
+var OrcCommander = (function () {
+    function OrcCommander() {
+    }
+    OrcCommander.prototype.addToOrcArmy = function () {
+        console.log("An orc commander is added to the orc army.");
+    };
+    return OrcCommander;
+})();
 var OrcArcher = (function () {
     function OrcArcher() {
     }
@@ -104,14 +224,6 @@ var OrcBerserker = (function () {
     };
     return OrcBerserker;
 })();
-var OrcCommander = (function () {
-    function OrcCommander() {
-    }
-    OrcCommander.prototype.addToOrcArmy = function () {
-        console.log("An orc commander is added to the orc army.");
-    };
-    return OrcCommander;
-})();
 var Fighter = (function () {
     function Fighter() {
     }
@@ -119,6 +231,14 @@ var Fighter = (function () {
         return "A hero joins your party.";
     };
     return Fighter;
+})();
+var Mage = (function () {
+    function Mage() {
+    }
+    Mage.prototype.spawnHero = function () {
+        return "A mage joins your party.";
+    };
+    return Mage;
 })();
 var HeroFactory = (function () {
     function HeroFactory() {
@@ -139,14 +259,6 @@ var HeroFactory = (function () {
         }
     };
     return HeroFactory;
-})();
-var Mage = (function () {
-    function Mage() {
-    }
-    Mage.prototype.spawnHero = function () {
-        return "A mage joins your party.";
-    };
-    return Mage;
 })();
 var Thief = (function () {
     function Thief() {
@@ -180,19 +292,30 @@ var Thief = (function () {
 //interface IShape {
 //    draw();
 //}    
-//class ShapeFactory {
-//    private circleMap = {};
-//    static getCircle(color: string) {
-//        let circle = this.circleMap;
-//        if (circle == null) {
-//            circle = new Circle(color);
-//            this.circleMap.color = circle;
-//            //Add circle to circle map;
-//            console.log("Creating circle of color: " + color);
-//        }
-//        return circle;
-//    }
-//} 
+var ShapeFactory = (function () {
+    function ShapeFactory() {
+        this.circleMap = {};
+    }
+    ShapeFactory.getCircle = function (color) {
+        //let circle = this.circleMap;
+        //if (circle == null) {
+        //  circle = new Circle(color);
+        //  this.circleMap.color = circle;
+        //Add circle to circle map;
+        console.log("Creating circle of color: " + color);
+        //}
+        //return circle;
+    };
+    return ShapeFactory;
+})();
+var Output = (function () {
+    function Output() {
+    }
+    Output.outputMentalMessage = function (mindReader, messageContent) {
+        console.log(" [" + mindReader.getName() + "] : " + messageContent);
+    };
+    return Output;
+})();
 var MindReader = (function () {
     function MindReader(name) {
         this.name = name;
@@ -207,14 +330,6 @@ var MindReader = (function () {
         Output.outputMentalMessage(this, message);
     };
     return MindReader;
-})();
-var Output = (function () {
-    function Output() {
-    }
-    Output.outputMentalMessage = function (mindReader, messageContent) {
-        console.log(" [" + mindReader.getName() + "] : " + messageContent);
-    };
-    return Output;
 })();
 var Caretaker = (function () {
     function Caretaker() {
@@ -254,18 +369,6 @@ var Sorcerer = (function () {
     };
     return Sorcerer;
 })();
-var DragonAttackState = (function () {
-    function DragonAttackState() {
-    }
-    DragonAttackState.prototype.setState = function (context) {
-        console.log("Dragon is in attack state");
-        context.setState(this);
-    };
-    DragonAttackState.prototype.toString = function () {
-        return "Dragon Attack.";
-    };
-    return DragonAttackState;
-})();
 var DragonContext = (function () {
     function DragonContext() {
         this.state = null;
@@ -278,6 +381,18 @@ var DragonContext = (function () {
     };
     return DragonContext;
 })();
+var DragonAttackState = (function () {
+    function DragonAttackState() {
+    }
+    DragonAttackState.prototype.setState = function (context) {
+        console.log("Dragon is in attack state");
+        context.setState(this);
+    };
+    DragonAttackState.prototype.toString = function () {
+        return "Dragon Attack.";
+    };
+    return DragonAttackState;
+})();
 var DragonDefendState = (function () {
     function DragonDefendState() {
     }
@@ -289,30 +404,6 @@ var DragonDefendState = (function () {
         return "Dragon Defend.";
     };
     return DragonDefendState;
-})();
-var FireSpell = (function () {
-    function FireSpell() {
-    }
-    FireSpell.prototype.castSpell = function () {
-        return "All enemies are engulfed in flames.";
-    };
-    return FireSpell;
-})();
-var FreezeSpell = (function () {
-    function FreezeSpell() {
-    }
-    FreezeSpell.prototype.castSpell = function () {
-        return "The freeze spell crystalizes all enemies in a thick shell of ice.";
-    };
-    return FreezeSpell;
-})();
-var LightningSpell = (function () {
-    function LightningSpell() {
-    }
-    LightningSpell.prototype.castSpell = function () {
-        return "Lightning strikes down from the sky and vaporizes all enemies.";
-    };
-    return LightningSpell;
 })();
 var Wizard = (function () {
     function Wizard(name, strategy) {
@@ -327,5 +418,29 @@ var Wizard = (function () {
         return this.strategy.castSpell();
     };
     return Wizard;
+})();
+var FreezeSpell = (function () {
+    function FreezeSpell() {
+    }
+    FreezeSpell.prototype.castSpell = function () {
+        return "The freeze spell crystalizes all enemies in a thick shell of ice.";
+    };
+    return FreezeSpell;
+})();
+var FireSpell = (function () {
+    function FireSpell() {
+    }
+    FireSpell.prototype.castSpell = function () {
+        return "All enemies are engulfed in flames.";
+    };
+    return FireSpell;
+})();
+var LightningSpell = (function () {
+    function LightningSpell() {
+    }
+    LightningSpell.prototype.castSpell = function () {
+        return "Lightning strikes down from the sky and vaporizes all enemies.";
+    };
+    return LightningSpell;
 })();
 //# sourceMappingURL=app.js.map

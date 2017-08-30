@@ -28,6 +28,18 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="Builder\Bottle.ts" />
+    <TypeScriptCompile Include="Builder\Burger.ts" />
+    <TypeScriptCompile Include="Builder\ChickenBurger.ts" />
+    <TypeScriptCompile Include="Builder\Coke.ts" />
+    <TypeScriptCompile Include="Builder\ColdDrink.ts" />
+    <TypeScriptCompile Include="Builder\IItem.ts" />
+    <TypeScriptCompile Include="Builder\IPacking.ts" />
+    <TypeScriptCompile Include="Builder\Meal.ts" />
+    <TypeScriptCompile Include="Builder\MealBuilder.ts" />
+    <TypeScriptCompile Include="Builder\Pepsi.ts" />
+    <TypeScriptCompile Include="Builder\VegBurger.ts" />
+    <TypeScriptCompile Include="Builder\Wrapper.ts" />
     <TypeScriptCompile Include="Facade\OrcCommander.ts" />
     <TypeScriptCompile Include="Facade\IOrcFighter.ts" />
     <TypeScriptCompile Include="Facade\OrcArcher.ts" />

@@ -90,28 +90,45 @@
     mindReader1.sendMentalMessage("Why good day to you, Hanyrroptus!");
     mindReader2.sendMentalMessage("Why hello to YOU, Zfftlllar!"); 
 
+    /*
+    //BUILDER PATTERN IMPLEMENTATION
+
+    console.log("<<<BUILDER PATTERN IMPLEMENTATION>>>");
+
+    let mealBuilder = new MealBuilder();
+
+    let vegMeal = mealBuilder.prepareVegMeal();
+    console.log("Veg meal");
+    vegMeal.showItems();
+    console.log("Total cost: " + vegMeal.getCost());
+
+    let nonVegMeal = mealBuilder.prepareNonVegMeal();
+    console.log("\n NonVeg Meal");
+    nonVegMeal.showItems();
+    console.log("Total cost: " + nonVegMeal.getCost());
+    */
     ////FYLWEIGHT PATTERN IMPLEMENTATION
 
-    //let colors: string[] = ["Red", "Green", "Blue", "White", "Black"];
+    let colors: string[] = ["Red", "Green", "Blue", "White", "Black"];
 
-    //for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 20; i++) {
 
-    //    let circle = ShapeFactory.getCircle(this.getRandomColor());
-    //    circle.setX(this.getRandomX());
-    //    circle.setY(this.getRandomY());
-    //    circle.getRadius(100);
-    //    circle.draw();
-    //}
+        let circle = ShapeFactory.getCircle(this.getRandomColor());
+        //circle.setX(this.getRandomX());
+        //circle.setY(this.getRandomY());
+        //circle.getRadius(100);
+        //circle.draw();
+    }
 
-    //function getRandomNumber() {
-    //    return colors[Math.random() * colors.length];
-    //}
+    function getRandomNumber() {
+        return colors[Math.random() * colors.length];
+    }
 
-    //function getRandomX() {
-    //    return Math.random() * 100;
-    //}
-    //function getRandomY() {
-    //    return Math.random() * 100;
-    //}
+    function getRandomX() {
+        return Math.random() * 100;
+    }
+    function getRandomY() {
+        return Math.random() * 100;
+    }
 
 };
